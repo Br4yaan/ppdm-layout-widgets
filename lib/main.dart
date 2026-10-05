@@ -111,6 +111,7 @@ class TelaDashboard extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
 
+            // EXERCÍCIO 05: Stack com segundo selo (Confirmado)
             Stack(
               clipBehavior: Clip.none,
               children: [
@@ -136,6 +137,7 @@ class TelaDashboard extends StatelessWidget {
                     ],
                   ),
                 ),
+                // Selo Superior (Raro)
                 Positioned(
                   top: -8,
                   right: -8,
@@ -147,6 +149,22 @@ class TelaDashboard extends StatelessWidget {
                     ),
                     child: const Text(
                       'Raro',
+                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                // Selo Inferior Esquerdo (Confirmado - Exercício 05)
+                Positioned(
+                  bottom: -8,
+                  left: -8,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'Confirmado',
                       style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
                     ),
                   ),
