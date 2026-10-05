@@ -36,7 +36,7 @@ class TelaDashboard extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          // EXERCÍCIO 02: Alinhamento centralizado no eixo cruzado
+          // EXERCÍCIO 02: Alinhamento centralizado
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
@@ -45,7 +45,7 @@ class TelaDashboard extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
             
-            // EXERCÍCIO 01: 3 Cards usando Expanded na Row
+            // EXERCÍCIO 01: 3 Cards na Row
             Row(
               children: [
                 Expanded(
@@ -152,6 +152,38 @@ class TelaDashboard extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            const SizedBox(height: 24.0),
+
+            // EXERCÍCIO 03: Seção "Últimos Registros"
+            const Text(
+              'Ultimos Registros',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16.0),
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade100,
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.grey.shade300),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: const [
+                      Icon(Icons.list_alt, color: Colors.teal),
+                      SizedBox(width: 12),
+                      Text('Registro de Campo #042', style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.arrow_forward_ios, size: 18),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
             ),
           ],
         ),
