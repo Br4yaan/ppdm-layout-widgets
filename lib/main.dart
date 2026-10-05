@@ -45,37 +45,43 @@ class TelaDashboard extends StatelessWidget {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16.0),
-            
-            // EXERCÍCIO 01 e 07: 3 Cards na Row usando o Widget BlocoEstatistica
-            Row(
-              children: [
-                Expanded(
-                  child: BlocoEstatistica(
+
+            // EXERCÍCIO 08: GridView 2x2 substituindo a Row (Exercícios 01, 07 e 08)
+            SizedBox(
+              height: 260,
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 12,
+                mainAxisSpacing: 12,
+                childAspectRatio: 1.3,
+                physics: const NeverScrollableScrollPhysics(),
+                children: [
+                  BlocoEstatistica(
                     icone: Icons.flutter_dash,
                     valor: '124',
                     legenda: 'Aves Vistas',
                     corFundo: Colors.teal.shade100,
                   ),
-                ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: BlocoEstatistica(
+                  BlocoEstatistica(
                     icone: Icons.place,
                     valor: '18',
                     legenda: 'Locais Visitados',
                     corFundo: Colors.teal.shade50,
                   ),
-                ),
-                const SizedBox(width: 12.0),
-                Expanded(
-                  child: BlocoEstatistica(
+                  BlocoEstatistica(
                     icone: Icons.camera_alt,
                     valor: '45',
                     legenda: 'Fotos',
                     corFundo: Colors.teal.shade100,
                   ),
-                ),
-              ],
+                  BlocoEstatistica(
+                    icone: Icons.eco,
+                    valor: '7',
+                    legenda: 'Especies Raras',
+                    corFundo: Colors.teal.shade50,
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 24.0),
 
@@ -123,14 +129,18 @@ class TelaDashboard extends StatelessWidget {
                   top: -8,
                   right: -8,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Text(
                       'Raro',
-                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -139,14 +149,18 @@ class TelaDashboard extends StatelessWidget {
                   bottom: -8,
                   left: -8,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.green,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Text(
                       'Confirmado',
-                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -174,7 +188,8 @@ class TelaDashboard extends StatelessWidget {
                     children: const [
                       Icon(Icons.list_alt, color: Colors.teal),
                       SizedBox(width: 12),
-                      Text('Registro de Campo #042', style: TextStyle(fontWeight: FontWeight.bold)),
+                      Text('Registro de Campo #042',
+                          style: TextStyle(fontWeight: FontWeight.bold)),
                     ],
                   ),
                   IconButton(
