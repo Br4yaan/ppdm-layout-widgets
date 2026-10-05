@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'widgets/bloco_estatistica.dart';
 
 void main() {
   runApp(const MeuLayoutApp());
@@ -45,60 +46,33 @@ class TelaDashboard extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
             
-            // EXERCÍCIO 01: 3 Cards na Row
+            // EXERCÍCIO 01 e 07: 3 Cards na Row usando o Widget BlocoEstatistica
             Row(
               children: [
                 Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade100,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.flutter_dash, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text('124', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                        Text('Aves Vistas', style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
+                  child: BlocoEstatistica(
+                    icone: Icons.flutter_dash,
+                    valor: '124',
+                    legenda: 'Aves Vistas',
+                    corFundo: Colors.teal.shade100,
                   ),
                 ),
                 const SizedBox(width: 12.0),
                 Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade50,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.place, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text('18', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                        Text('Locais Visitados', style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
+                  child: BlocoEstatistica(
+                    icone: Icons.place,
+                    valor: '18',
+                    legenda: 'Locais Visitados',
+                    corFundo: Colors.teal.shade50,
                   ),
                 ),
                 const SizedBox(width: 12.0),
                 Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade100,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.camera_alt, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text('45', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                        Text('Fotos', style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
+                  child: BlocoEstatistica(
+                    icone: Icons.camera_alt,
+                    valor: '45',
+                    legenda: 'Fotos',
+                    corFundo: Colors.teal.shade100,
                   ),
                 ),
               ],
@@ -111,7 +85,7 @@ class TelaDashboard extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
 
-            // EXERCÍCIO 06: Substituição por Card do Material com elevação
+            // EXERCÍCIO 05 e 06: Card com Elevação + Stack com 2 Selos
             Stack(
               clipBehavior: Clip.none,
               children: [
@@ -160,7 +134,7 @@ class TelaDashboard extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Selo Inferior Esquerdo (Confirmado - Exercício 05)
+                // Selo Inferior Esquerdo (Confirmado)
                 Positioned(
                   bottom: -8,
                   left: -8,
